@@ -1,0 +1,33 @@
+<%= form_for(@knjige) do |f| %>
+  <% if @knjige.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@knjige.errors.count, "error") %> prohibited this knjige from being saved:</h2>
+
+      <ul>
+      <% @knjige.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :naslov %><br>
+    <%= f.text_field :naslov %>
+  </div>
+  <div class="field">
+    <%= f.label :avtor %><br>
+    <%= f.text_field :avtor %>
+  </div>
+  <div class="field">
+    <%= f.label :opis %><br>
+    <%= f.text_area :opis %>
+  </div>
+  <div class="field">
+    <%= f.label :datum_izdaje %><br>
+    <%= f.datetime_select :datum_izdaje %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

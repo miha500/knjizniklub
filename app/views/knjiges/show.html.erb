@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Naslov:</strong>
+  <%= @knjige.naslov %>
+</p>
+
+<p>
+  <strong>Avtor:</strong>
+  <%= @knjige.avtor %>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+  <%= @knjige.opis %>
+</p>
+
+<p>
+  <strong>Datum izdaje:</strong>
+  <%= @knjige.datum_izdaje %>
+</p>
+
+<%= link_to 'Edit', edit_knjige_path(@knjige) %> |
+<%= link_to 'Back', knjiges_path %>

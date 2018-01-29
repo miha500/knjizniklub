@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Knjiges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Naslov</th>
+      <th>Avtor</th>
+      <th>Opis</th>
+      <th>Datum izdaje</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @knjiges.each do |knjige| %>
+      <tr>
+        <td><%= knjige.naslov %></td>
+        <td><%= knjige.avtor %></td>
+        <td><%= knjige.opis %></td>
+        <td><%= knjige.datum_izdaje %></td>
+        <td><%= link_to 'Show', knjige %></td>
+        <td><%= link_to 'Edit', edit_knjige_path(knjige) %></td>
+        <td><%= link_to 'Destroy', knjige, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Knjige', new_knjige_path %>
